@@ -11,14 +11,21 @@ print('\nData Set loaded')
 def dataSet_Ops():
     for col in ds.columns:
         print(col)
+        column = pd.DataFrame([col])
+        print('\Columns data types are as follows ::\t{}'.format(column.dtypes))
+        
         
     print('\nFew basic operation can be included as per the requirement\nto extract data from data set')
     
 def MaxMin():
+    print('\nHeight comparision\n')
     max__age = ds['Age'].max()
     min__age = ds['Age'].min()
+       
     #max__height = ds['Height'].max()
     #min__Height = ds['Height'].min()
+    
+    print('\nAcceleration comparision\n')
     max__Acceleration = ds['Acceleration'].max()
     min__Acceleration = ds['Acceleration'].min()
 
@@ -35,10 +42,8 @@ def MaxMin():
     plt.show()
     
     ##Complex PyPlot demo##
-    plt.figure(1, figsize=(max__age, max__Acceleration))
-    plt.subplot(max__age, max__Acceleration)
-    plt.bar(max__age, max__Acceleration)
-    plt.show()
+    
 
-MaxMin()
+dataSet_Ops()
+#MaxMin()
 print('\nEOF\n')
